@@ -4,16 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 authors = [
-
 {name = "David Kuchelmeister"},
-
 ]
 
 dependencies = [
   "pandas >= 1.4.0",
 ]
 dynamic = ["version"]
-name = "llm"
+name = "llm_study"
 readme = "README.md"
 requires-python = ">=3.8"
 
@@ -24,11 +22,11 @@ dev = [
 
 [tool.coverage.run]
 source_pkgs = [
-  "llm",
+  "llm_study",
 ]
 
 [tool.mypy]
-files = "src/llm"
+files = "src/llm_study"
 ignore_missing_imports = true
 python_version = "3.10"
 
@@ -41,12 +39,12 @@ testpaths = [
 where = ["src"]
 
 [tool.setuptools_scm]
-write_to = "src/llm/_version.py"
+write_to = "src/llm_study/_version.py"
 version_scheme = "python-simplified-semver"
 
-# ===================================================================================
-# POETRY                                                                            #
-# ===================================================================================
+########################################################################################
+# POETRY                                                                               #
+########################################################################################
 
 [tool.poetry]
 name = "llm_study"
@@ -67,6 +65,9 @@ keywords = ["packaging", "poetry"]
 [tool.poetry.dependencies]
 # Compatible Python versions
 python = ">=3.10"
+
+# install current project as editable
+my-package = {path = "../my/path", develop = true}
 
 # Dependency groups are supported for organizing your dependencies
 polars = "^0.18.7"

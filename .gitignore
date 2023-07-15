@@ -100,4 +100,4 @@ target/
 _version.py
 
 # exlude not my files
-/src/llm/BJB_Workshop/
+/src/llm_study/BJB_Workshop/
