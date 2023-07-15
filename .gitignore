@@ -99,8 +99,5 @@ target/
 # ignore version file
 _version.py
 
+# exlude not my files
 /src/llm/BJB_Workshop/
-
-# exclude google drive credentials
-src/llm/google_drive/client_secret_342896348259-ena93uub5sbddjrbtu3eo613qujnjh6g.apps.googleusercontent.com.json
-src/llm/google_drive/original-frame-289508-7b253fd94c34.json
