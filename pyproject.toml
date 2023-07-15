@@ -30,7 +30,7 @@ source_pkgs = [
 [tool.mypy]
 files = "src/llm"
 ignore_missing_imports = true
-python_version = "3.8"
+python_version = "3.10"
 
 [tool.pytest.ini_options]
 testpaths = [
@@ -43,3 +43,55 @@ where = ["src"]
 [tool.setuptools_scm]
 write_to = "src/llm/_version.py"
 version_scheme = "python-simplified-semver"
+
+# ===================================================================================
+# POETRY                                                                            #
+# ===================================================================================
+
+[tool.poetry]
+name = "llm_study"
+authors = ["David Kuchelmeister"]
+description = "The description of the package"
+version = "0.0.0"
+
+license = "MIT"
+
+repository = "https://github.com/kuchedav/llm_study"
+
+# README file(s) are used as the package description
+readme = ["README.md", "LICENSE"]
+
+# Keywords (translated to tags on the package index)
+keywords = ["packaging", "poetry"]
+
+[tool.poetry.dependencies]
+# Compatible Python versions
+python = ">=3.10"
+
+# Dependency groups are supported for organizing your dependencies
+polars = "^0.18.7"
+wheel = "^0.40.0"
+coverage = "^7.2.7"
+tox = "^4.6.4"
+pre-commit = "^3.3.3"
+pre-commit-hooks = "^4.4.0"
+reorder-python-imports = "^3.10.0"
+black = "^23.7.0"
+mypy = "^1.4.1"
+twine = "^4.0.2"
+build = "^0.10.0"
+setuptools-scm = "^7.1.0"
+pandas = "^2.0.3"
+flake8 = "^6.0.0"
+pyupgrade = "^3.9.0"
+numpy = "^1.25.1"
+[tool.poetry.group.dev.dependencies]
+
+# ...and can be installed only when explicitly requested
+[tool.poetry.group.docs]
+optional = true
+[tool.poetry.group.docs.dependencies]
+
+# Python-style entrypoints and scripts are easily expressed
+[tool.poetry.scripts]
+my-script = "llm_study:main"
